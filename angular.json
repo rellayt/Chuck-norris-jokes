@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "chuck-norris-jokes"
+    }
+  },
+  "defaultProject": "chuck-norris-jokes",
+  "cli": {
+    "analytics": "d3877fe2-e2b6-4021-9a2e-a69015e5d852"
+  }
 }
