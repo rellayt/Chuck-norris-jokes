@@ -1,0 +1,20 @@
+<header>
+  <nav class="nav">
+    <h2>Home</h2>
+    <ul class="nav__list">
+      <li class="nav__item" *ngFor="let item of navigationItems">
+        <a [routerLink]="item.url">{{item.name}}</a>
+      </li>
+    </ul>
+    <div class="nav__menu">
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item *ngFor="let item of navigationItems">
+          <a [routerLink]="item.url">{{item.name}}</a>
+        </button>
+      </mat-menu>
+    </div>
+    <button class="nav__mobile-icon" mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </nav>
+</header>

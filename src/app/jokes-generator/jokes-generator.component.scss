@@ -1,0 +1,19 @@
+.jokes-generator {
+  height: 73vh;
+  margin: auto;
+  width: 555px;
+  background: var(--white);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.08);
+  @media (max-width: 1440px) {
+    width: 60vw;
+    height: 80vh;
+  }
+  @media (max-width: 768px) {
+    height: 75vh;
+  }
+  @media (max-width: 420px) {
+    width: 80vw;
+    height: 70vh;
+  }
+}
