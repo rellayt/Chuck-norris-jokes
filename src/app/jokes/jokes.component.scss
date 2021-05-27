@@ -7,30 +7,32 @@
   border-radius: 20px;
   box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.08);
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 100%;
   grid-template-rows: 130px 114px 1fr;
   & > * {
     justify-self: center;
     width: 100%;
     height: 100%;
   }
-
-  @media (max-width: 1440px) {
-    // height: 75vh;
-  }
   @media (max-width: 768px) {
-    // height: 90vh;
-    // padding: 24px 29px 36px;
-    // width: 70vw;
-    margin: 10px 0;
+    grid-template-rows: 100px 114px 1fr;
+    height: 673px;
+    width: 450px;
+    margin: 10px auto;
+    padding: 24px 29px 36px;
+  }
+  @media (max-width: 600px) {
+    width: 80%;
   }
   @media (max-width: 420px) {
-    // padding: 12px 14px 18px;
-    // width: 80vw;
+    width: 95%;
+    margin: 5px auto;
+    height: 634px;
+    padding: 18px 20px 27px;
   }
   &__form {
     display: grid;
-    grid-template-columns: 30% 70%;
+    grid-template-columns: 35% 65%;
     grid-template-rows: 74px 90px 110px 58px 34px;
     & > *:not(:nth-child(4)):not(:nth-child(5)) {
       grid-column: 1/3;
@@ -39,30 +41,47 @@
       margin-top: 12px;
     }
   }
+  &__impersonated-image {
+    max-width: 337px !important;
+  }
   img {
     max-width: 100%;
     max-height: 100%;
   }
+
   &__text {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
     font-size: var(--m);
     font-weight: 600;
     font-style: italic;
-    text-align: left;
-    padding: 24px 0 32px;
+    max-height: 104px;
+    padding-top: 24px;
+    mat-spinner {
+      margin: 0 auto;
+      zoom: 0.5;
+    }
+    ::ng-deep {
+      .mat-progress-spinner circle,
+      .mat-spinner circle {
+        stroke: var(--dark);
+      }
+    }
   }
   &__quantity {
     background: var(--gray-2);
     border-radius: 6px;
     display: grid;
-    grid-template-columns: repeat(3, 33.33%);
+    grid-template-columns: 30% 40% 30%;
     grid-template-rows: 1fr;
     margin-right: 8px;
     height: 100%;
     transition: background 250ms ease;
     & > * {
+      justify-self: center;
       align-self: center;
-    }
-    button:nth-child(2) {
       grid-row: 1/3;
     }
 
@@ -70,33 +89,60 @@
       background: var(--red-error);
     }
     button {
-      border-radius: 50%;
       border: none;
+      cursor: pointer;
       display: flex;
       align-items: center;
-      cursor: pointer;
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
       background: transparent;
-      mat-icon {
-        display: flex;
-        align-items: center;
-        font-size: 28px;
-        margin: auto;
+      &::after {
+        display: block;
+        content: "";
+        width: 25px;
+        height: 25px;
+        background-size: cover;
+        border-radius: 50%;
+        background-repeat: no-repeat;
+        background-color: transparent;
+        object-fit: fill;
       }
+    }
+    button:nth-child(2)::after {
+      background-image: url("../../assets/pictures/rounded-minus.png");
+    }
+    button:nth-child(3)::after {
+      background-image: url("../../assets/pictures/rounded-plus.png");
+    }
+
+    input:focus ~ button::after {
+      background-image: url("../../assets/pictures/plus.png");
+    }
+    input:focus + button::after {
+      background-image: url("../../assets/pictures/minus.png");
+    }
+    button:nth-child(2)::after,
+    button:nth-child(3)::after {
+      transition: background-image 200ms ease;
+      transition: background-color 200ms ease;
+    }
+    input:focus + button::after,
+    input:focus ~ button::after {
+      background-color: #dbdbdb;
     }
     input {
       grid-column: 2/3;
       background: transparent;
       width: 45px;
+      justify-self: center;
       text-align: center;
       font-size: var(--m);
       border: none;
       &:focus {
         outline: none;
       }
-    }
-    input:focus + button mat-icon,
-    input:focus ~ button mat-icon {
-      font-size: 58px;
     }
   }
 }

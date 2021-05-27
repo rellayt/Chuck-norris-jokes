@@ -1,21 +1,26 @@
 .main {
   height: calc(100% - 76px);
-  width: 80%;
-  margin: 0 auto;
-  display: flex;
-  padding: 10px;
+  width: 100%;
+  display: grid;
+  padding: 30px;
   justify-content: center;
   align-items: center;
-  // background: chartreuse;
-  @media (max-width: 1440px) {
-    width: 80%;
+  @media (max-width: 1700px) {
     height: auto;
+  }
+  @media (max-width: 1440px) {
+    padding: 20px;
+  }
+  @media (max-width: 1280px) {
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
   }
   @media (max-width: 768px) {
-    width: 90%;
-    height: auto;
+    padding: 10px;
   }
   @media (max-width: 420px) {
-    height: auto;
+    height: 93%;
+    width: 100%;
   }
 }

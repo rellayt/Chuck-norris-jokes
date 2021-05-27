@@ -1,23 +1,32 @@
 <div class="card">
-  <img [src]="impersonated ? chuckNorrisPicture : randomPicture" />
-  <p class="card__text">“If Chuck Norris were to travel to an alternate dimension in which there was another Chuck
-    Norris and they both fight, they would both win”</p>
+  <img [ngClass]="{'card__impersonated-image': impersonated}"
+    [src]="impersonated ? randomPicture : chuckNorrisPicture" />
+  <p class="card__text" *ngIf="joke$ | async as joke; else textLoading" [innerHtml]="joke | unescape">
+  </p>
+  <ng-template #textLoading>
+    <div class="card__text">
+      <mat-spinner></mat-spinner>
+    </div>
+  </ng-template>
   <form [formGroup]="jokesForm" class="card__form" (ngSubmit)="drawJoke()">
-    <app-select [options]=categories controlName="categories" [filled]="!!jokesForm.value.categories">Categories
+    <app-select [options]=categories controlName="category" [filled]="!!jokesForm.value.category">Categories
     </app-select>
     <app-input controlName="impersonate" [filled]="!!jokesForm.value.impersonate">Impersonate Chuck Norris</app-input>
-    <app-button [type]="'submit'">Draw a random {{ impersonate.length === 0 ? 'Chuck Norris' : impersonate}} Joke
+    <app-button [isLoading]="buttonState.drawLoading" [type]="'submit'">Draw a random {{ impersonate &&
+      impersonate.length === 0 ?
+      'Chuck Norris' : impersonate}} Joke
     </app-button>
-    <div class="card__quantity" [class.card__quantity--error]="!jokesForm.controls.quantity.valid">
+    <div class="card__quantity"
+      [class.card__quantity--error]="!jokesForm.controls.quantity.valid && !jokesForm.controls.quantity.disabled">
       <input maxlength="3" formControlName="quantity" appInteger />
-      <button type="button" (click)="handleQuantityChange(-1)" class="plus-minus">
-        <mat-icon>remove_circle_outline</mat-icon>
+      <button type="button" (click)="handleQuantityChange(-1)">
       </button>
-      <button type="button" (click)="handleQuantityChange(1)" class="plus-minus">
-        <mat-icon>add_circle_outline</mat-icon>
+      <button type="button" (click)="handleQuantityChange(1)">
       </button>
     </div>
-    <app-button [isDisabled]="!jokesForm.controls.quantity.valid || jokesForm.controls.quantity.value === 0 ">
+    <app-button
+      [isDisabled]="(!jokesForm.controls.quantity.valid && !jokesForm.controls.quantity.disabled) || jokesForm.controls.quantity.value === 0 "
+      (onClick)="saveJokes()" [isLoading]="buttonState.saveLoading">
       Save Jokes</app-button>
     <app-validation-feedback [control]="jokesForm.controls.quantity"></app-validation-feedback>
   </form>

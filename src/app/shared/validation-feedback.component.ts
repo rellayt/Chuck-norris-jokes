@@ -16,13 +16,9 @@ export class ValidationFeedbackComponent {
 
   get errorMessage() {
     for (const property in this.control.errors) {
-      console.log(property);
-
       const hasError = this.control.errors.hasOwnProperty(property)
       if (hasError && property in this.config) return this.config[property]
     }
     return null;
   }
-
-
 }

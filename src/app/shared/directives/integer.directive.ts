@@ -5,8 +5,7 @@ import { Directive, ElementRef, Renderer2, HostListener } from '@angular/core';
 })
 export class IntegerDirective {
 
-  constructor(private elementRef: ElementRef, private renderer: Renderer2) {
-  }
+  constructor(private elementRef: ElementRef, private renderer: Renderer2) { }
 
   @HostListener('input') valueChanges() {
     const { nativeElement: { value } } = this.elementRef

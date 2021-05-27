@@ -8,6 +8,7 @@ import { InputComponent } from './input/input.component';
 import { ButtonComponent } from './button/button.component';
 import { IntegerDirective } from './directives/integer.directive';
 import { ValidationFeedbackComponent } from './validation-feedback.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
@@ -16,6 +17,7 @@ import { ValidationFeedbackComponent } from './validation-feedback.component';
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
   ],
   declarations: [SelectComponent, InputComponent, ButtonComponent, IntegerDirective, ValidationFeedbackComponent],
   exports: [FormsModule, ReactiveFormsModule, MaterialModule, SelectComponent, InputComponent, ButtonComponent, IntegerDirective, ValidationFeedbackComponent],

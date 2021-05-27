@@ -4,12 +4,14 @@
   border-radius: 6px;
   color: var(--white);
   background: var(--dark);
-  font-weight: 600;
-  font-size: var(--s);
+  font-size: var(--m);
   display: flex;
   justify-content: center;
   align-items: center;
   transition: background 250ms ease-out;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   svg {
     transform: scale(0.2);
   }

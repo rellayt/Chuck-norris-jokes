@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './shared/layout/header/header.component';
 import { SharedModule } from './shared/shared.module';
 import { JokesModule } from './jokes/jokes.module';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { JokesModule } from './jokes/jokes.module';
   ],
   imports: [
     BrowserModule,
+    CoreModule,
     SharedModule,
     JokesModule,
     AppRoutingModule,

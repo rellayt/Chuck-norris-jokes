@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { NAVIGATION_ITEMS } from 'src/app/core/config/navigation';
 import { navigationItem } from '../../../core/models/navigation-item.model';
 

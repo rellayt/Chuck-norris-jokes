@@ -1,12 +1,10 @@
-import { NgModule, Component } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { JokesComponent } from './jokes/jokes.component';
-
 
 const routes: Routes = [
   {
     path: '',
-    component: JokesComponent
+    loadChildren: () => import('./jokes/jokes.module').then(m => m.JokesModule)
   }
 ];
 

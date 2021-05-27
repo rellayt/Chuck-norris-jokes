@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { ControlContainer, FormControl } from '@angular/forms';
+import { Component, Input } from '@angular/core';
+import { ControlContainer } from '@angular/forms';
 
 @Component({
   selector: 'app-input',
@@ -11,9 +11,6 @@ export class InputComponent {
   @Input() controlName: string
   @Input() filled: boolean
 
-  constructor(public controlContainer: ControlContainer) {
-  }
-
-  inputControl = new FormControl()
+  constructor(public controlContainer: ControlContainer) { }
 
 }

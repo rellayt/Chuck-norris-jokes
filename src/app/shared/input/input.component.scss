@@ -6,10 +6,13 @@
     .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float
       .mat-form-field-label {
       color: var(--gray-1);
-      transform: translateY(-10px) scale(0.7);
+      transform: translateY(-8px) scale(0.7);
     }
     .mat-input-element {
       transform: translateY(4px);
+    }
+    .mat-form-field-label-wrapper {
+      top: -1.15em;
     }
   }
   .mat-form-field-appearance-outline .mat-form-field-flex {

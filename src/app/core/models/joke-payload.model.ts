@@ -4,3 +4,7 @@ export interface JokePayload {
   type: string;
   value: Joke;
 }
+export interface MultipleJokesPayload {
+  type: string;
+  value: Joke[];
+}
