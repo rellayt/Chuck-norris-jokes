@@ -1,0 +1,36 @@
+.styled-button {
+  width: 100%;
+  height: 58px;
+  border-radius: 6px;
+  color: var(--white);
+  background: var(--dark);
+  font-weight: 600;
+  font-size: var(--s);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 250ms ease-out;
+  svg {
+    transform: scale(0.2);
+  }
+  &:disabled {
+    background: var(--gray-2);
+    color: var(--dark);
+  }
+  mat-spinner {
+    zoom: 0.35;
+  }
+  ::ng-deep {
+    .mat-progress-spinner circle,
+    .mat-spinner circle {
+      stroke: var(--dark);
+    }
+  }
+}
+::ng-deep {
+  app-button {
+    .mat-ripple-element {
+      background: #bebebe33;
+    }
+  }
+}

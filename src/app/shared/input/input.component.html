@@ -1,0 +1,8 @@
+<ng-container [formGroup]="controlContainer.control">
+  <mat-form-field class="styled-input" appearance="outline" [ngClass]="{'filled': filled}">
+    <mat-label>
+      <ng-content></ng-content>
+    </mat-label>
+    <input matInput [formControlName]="controlName" maxlength="35">
+  </mat-form-field>
+</ng-container>

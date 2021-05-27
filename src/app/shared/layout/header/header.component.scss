@@ -24,10 +24,10 @@ header {
     }
   }
   &__item {
-    font-size: var(--l);
     padding: 0 10px;
     a {
       transition: color ease 250ms;
+      font-size: var(--l);
       &:hover {
         color: var(--gray-1);
       }
@@ -35,6 +35,9 @@ header {
   }
   &__mobile-icon {
     display: none;
+    mat-icon {
+      color: var(--dark);
+    }
     @media (max-width: 768px) {
       display: block;
     }

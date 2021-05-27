@@ -1,0 +1,16 @@
+<ng-container [formGroup]="controlContainer.control">
+  <mat-form-field class="styled-select" appearance="outline" [ngClass]="{'filled': filled}">
+    <mat-label>
+      <ng-content></ng-content>
+    </mat-label>
+    <mat-select [formControlName]="controlName">
+      <div class="select-heading">
+        Select category
+        <img src="assets/pictures/caret-down.svg">
+      </div>
+      <mat-option *ngFor="let option of options" [value]="option.value">
+        {{option.view}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</ng-container>

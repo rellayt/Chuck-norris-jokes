@@ -1,0 +1,18 @@
+.styled-input {
+  width: 100%;
+}
+::ng-deep {
+  app-input {
+    .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float
+      .mat-form-field-label {
+      color: var(--gray-1);
+      transform: translateY(-10px) scale(0.7);
+    }
+    .mat-input-element {
+      transform: translateY(4px);
+    }
+  }
+  .mat-form-field-appearance-outline .mat-form-field-flex {
+    padding: 0 20px 0 16px !important;
+  }
+}

@@ -3,17 +3,19 @@
   width: 80%;
   margin: 0 auto;
   display: flex;
+  padding: 10px;
   justify-content: center;
   align-items: center;
-  background: chartreuse;
+  // background: chartreuse;
   @media (max-width: 1440px) {
     width: 80%;
+    height: auto;
   }
   @media (max-width: 768px) {
     width: 90%;
-    height: calc(100% - 56px);
+    height: auto;
   }
   @media (max-width: 420px) {
-    height: calc(100% - 46px);
+    height: auto;
   }
 }

@@ -1,22 +1,21 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './layout/header/header.component';
-import { JokesGeneratorComponent } from './jokes-generator/jokes-generator.component';
+import { HeaderComponent } from './shared/layout/header/header.component';
 import { SharedModule } from './shared/shared.module';
+import { JokesModule } from './jokes/jokes.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    JokesGeneratorComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     SharedModule,
+    JokesModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
