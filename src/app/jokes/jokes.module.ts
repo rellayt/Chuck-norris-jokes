@@ -5,6 +5,7 @@ import { JokeResolver } from './jokes-resolver.service';
 import { JokesRoutingModule } from './jokes-routing.module';
 import { CommonModule } from '@angular/common';
 import { UnescapePipe } from './unescape.pipe';
+import { QuantityInputComponent } from './quantity-input/quantity-input.component';
 
 @NgModule({
   imports: [
@@ -14,7 +15,8 @@ import { UnescapePipe } from './unescape.pipe';
   ],
   declarations: [
     JokesComponent,
-    UnescapePipe
+    UnescapePipe,
+    QuantityInputComponent
   ],
   providers: [JokeResolver]
 })

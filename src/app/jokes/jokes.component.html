@@ -16,16 +16,11 @@
       impersonate.length === 0 ?
       'Chuck Norris' : impersonate}} Joke
     </app-button>
-    <div class="card__quantity"
-      [class.card__quantity--error]="!jokesForm.controls.quantity.valid && !jokesForm.controls.quantity.disabled">
-      <input maxlength="3" formControlName="quantity" appInteger />
-      <button type="button" (click)="handleQuantityChange(-1)">
-      </button>
-      <button type="button" (click)="handleQuantityChange(1)">
-      </button>
-    </div>
+    <app-quantity-input controlName="quantity" (onValueChange)="handleQuantityChange($event)"
+      [hasError]="!jokesForm.controls.quantity.valid && !jokesForm.controls.quantity.disabled">
+    </app-quantity-input>
     <app-button
-      [isDisabled]="(!jokesForm.controls.quantity.valid && !jokesForm.controls.quantity.disabled) || jokesForm.controls.quantity.value === 0 "
+      [isDisabled]="(!jokesForm.controls.quantity.valid && !jokesForm.controls.quantity.disabled) || jokesForm.controls.quantity.value === 0 || jokesForm.controls.quantity.disabled"
       (onClick)="saveJokes()" [isLoading]="buttonState.saveLoading">
       Save Jokes</app-button>
     <app-validation-feedback [control]="jokesForm.controls.quantity"></app-validation-feedback>

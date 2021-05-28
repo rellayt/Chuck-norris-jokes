@@ -1,0 +1,83 @@
+.quantity {
+  background: var(--gray-2);
+  border-radius: 6px;
+  display: grid;
+  grid-template-columns: 30% 40% 30%;
+  grid-template-rows: 1fr;
+  margin-right: 8px;
+  height: 100%;
+  transition: background 250ms ease;
+  & > * {
+    justify-self: center;
+    align-self: center;
+    grid-row: 1/3;
+  }
+
+  &--error {
+    background: var(--red-error);
+  }
+  button {
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: transparent;
+    &::after {
+      display: block;
+      content: "";
+      width: 25px;
+      height: 25px;
+      background-size: cover;
+      border-radius: 50%;
+      background-repeat: no-repeat;
+      background-color: transparent;
+      object-fit: fill;
+    }
+    @media (max-width: 480px) {
+      width: 22px;
+      height: 22px;
+      &::after {
+        width: 19px;
+        height: 19px;
+      }
+    }
+  }
+  button:nth-child(2)::after {
+    background-image: url("../../../assets/pictures/rounded-minus.png");
+  }
+  button:nth-child(3)::after {
+    background-image: url("../../../assets/pictures/rounded-plus.png");
+  }
+
+  input:focus ~ button::after {
+    background-image: url("../../../assets/pictures/plus.png");
+  }
+  input:focus + button::after {
+    background-image: url("../../../assets/pictures/minus.png");
+  }
+  button:nth-child(2)::after,
+  button:nth-child(3)::after {
+    transition: background-image 200ms ease;
+    transition: background-color 200ms ease;
+  }
+  input:focus + button::after,
+  input:focus ~ button::after {
+    background-color: #dbdbdb;
+  }
+  input {
+    grid-column: 2/3;
+    background: transparent;
+    width: 45px;
+    justify-self: center;
+    text-align: center;
+    font-size: var(--m);
+    border: none;
+    &:focus {
+      outline: none;
+    }
+  }
+}
