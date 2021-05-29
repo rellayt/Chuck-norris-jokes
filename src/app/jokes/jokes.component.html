@@ -1,6 +1,8 @@
 <div class="card">
   <img [ngClass]="{'card__impersonated-image': impersonated}"
     [src]="impersonated ? randomPicture : chuckNorrisPicture" />
+  <p class="card__text" *ngIf="joke$ | async as joke; else textLoading" [innerHtml]="joke | unescape">
+  </p>
   <ng-template #textLoading>
     <div class="card__text">
       <mat-spinner></mat-spinner>
