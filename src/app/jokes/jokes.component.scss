@@ -4,8 +4,8 @@
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: 130px 114px 1fr;
-  max-height: $height;
-  max-width: $width;
+  height: $height;
+  width: $width;
   margin: auto;
   padding: 48px 58px 72px;
   background: var(--white);
@@ -17,15 +17,17 @@
     height: 100%;
   }
   @media (max-width: 1024px) {
-    max-height: calc(#{$height} - 50px);
-    max-width: calc(#{$width} - 30px);
+    height: calc(#{$height} - 10px);
+    width: calc(#{$width} - 30px);
   }
   @media (max-width: 768px) {
-    max-width: calc(#{$width} - 75px);
+    width: calc(#{$width} - 145px);
+    height: calc(#{$height} - 100px);
     grid-template-rows: 100px 114px 1fr;
     padding: 24px 29px 36px;
   }
   @media (max-width: 420px) {
+    width: 100%;
     padding: 18px 20px 27px;
   }
 
