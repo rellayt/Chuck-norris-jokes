@@ -1,9 +1,7 @@
-<ng-container [formGroup]="controlContainer.control">
-  <div class="quantity" [class.quantity--error]="hasError">
-    <input maxlength="3" [formControlName]="controlName" appInteger />
-    <button type="button" (click)="handleQuantityChange(-1)">
-    </button>
-    <button type="button" (click)="handleQuantityChange(1)">
-    </button>
-  </div>
-</ng-container>
+<div class="quantity" [class.quantity--error]="hasError">
+  <input maxlength="3" [formControl]="formControl" appInteger />
+  <button type="button" (click)="handleQuantityChange(-1)">
+  </button>
+  <button type="button" (click)="handleQuantityChange(1)">
+  </button>
+</div>
