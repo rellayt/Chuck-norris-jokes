@@ -27,10 +27,13 @@
     padding: 24px 29px 36px;
   }
   @media (max-width: 420px) {
+    height: calc(#{$height} - 100px);
     width: 100%;
-    padding: 18px 20px 27px;
+    padding: 30px 12px 20px;
   }
-
+  @media (max-width: 319px) {
+    padding: 20px 2px 15px;
+  }
   &__impersonated-image {
     max-width: 337px !important;
   }
@@ -76,7 +79,7 @@
       margin-top: 12px;
     }
     @media (max-width: 768px) {
-      grid-template-rows: 70px 83px 74px 58px 33px;
+      grid-template-rows: 70px 83px 74px 58px 64px;
       grid-template-columns: 0.4fr 0.6fr;
     }
   }
