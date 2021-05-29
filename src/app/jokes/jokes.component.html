@@ -22,7 +22,7 @@
       [hasError]="!jokesForm.controls.quantity.valid && !jokesForm.controls.quantity.disabled">
     </app-quantity-input>
     <app-button
-      [isDisabled]="!(jokesForm.controls.quantity.valid && jokesForm.controls.quantity.disabled) || jokesForm.controls.quantity.value === 0 || jokesForm.controls.quantity.disabled"
+      [isDisabled]="!jokesForm.controls.quantity.valid && !jokesForm.controls.quantity.disabled || jokesForm.controls.quantity.value === 0 || jokesForm.controls.quantity.disabled"
       (onClick)="saveJokes()" [isLoading]="buttonState.saveLoading">
       Save Jokes
     </app-button>

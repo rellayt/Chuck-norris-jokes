@@ -49,10 +49,9 @@ export class JokesComponent {
 
     this.jokesService.getMultiple(quantity).pipe(
       tap(() => {
-        this.buttonState.saveLoading = true
         this.jokesForm.disable()
+        this.buttonState.saveLoading = true
       }),
-      first(),
       delay(250),
       map(({ value }) => value.map(({ joke }) => joke)),
       finalize(() => {
@@ -82,18 +81,17 @@ export class JokesComponent {
 
     this.joke$ = this.jokesService.get(filters).pipe(
       tap(() => {
-        this.buttonState.drawLoading = true
         this.jokesForm.disable()
+        this.buttonState.drawLoading = true
       }),
       //for testing purposes
       delay(250),
       map(({ value: { joke } }) => joke),
       finalize(() => {
+        this.jokesForm.enable()
         this.buttonState.drawLoading = false
         this.snackBarService.open(JOKE_DRAW)
         this.isImpersonated = !!firstName
-        this.jokesForm.enable()
-        // or reset()
         this.jokesForm.setValue({ ...this.jokesForm.value, category: '', impersonate: '' })
       }),
       catchError(async (err) => this.snackBarService.open(ERROR))
