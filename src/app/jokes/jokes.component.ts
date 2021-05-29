@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { OptionItem } from '../core/models/option-item.model';
 import { CATEGORY_ITEMS } from '../core/config/categories';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -15,10 +15,10 @@ const PICTURES_PATH = 'assets/pictures'
 @Component({
   selector: 'app-jokes',
   templateUrl: './jokes.component.html',
-  styleUrls: ['./jokes.component.scss']
+  styleUrls: ['./jokes.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class JokesComponent {
-
   isImpersonated: boolean = false
   categories: OptionItem[] = CATEGORY_ITEMS
 
@@ -36,7 +36,7 @@ export class JokesComponent {
   }
 
   get impersonate(): string {
-    return this.jokesForm.value.impersonate
+    return this.jokesForm.get('impersonate').value
   }
 
   handleQuantityChange(value: number): void {

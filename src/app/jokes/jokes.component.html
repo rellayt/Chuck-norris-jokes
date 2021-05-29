@@ -16,7 +16,7 @@
       Impersonate Chuck Norris
     </app-input>
     <app-button [isLoading]="buttonState.drawLoading" [type]="'submit'">
-      Draw a random {{ impersonate && impersonate.length === 0 ? 'Chuck Norris' : impersonate}} joke
+      Draw a random {{ impersonate.length === 0 ? 'Chuck Norris' : impersonate}} joke
     </app-button>
     <app-quantity-input controlName="quantity" (onValueChange)="handleQuantityChange($event)"
       [hasError]="!jokesForm.controls.quantity.valid && !jokesForm.controls.quantity.disabled">
