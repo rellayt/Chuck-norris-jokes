@@ -1,37 +1,35 @@
 .card {
-  height: 704px;
-  margin: auto;
-  padding: 48px 58px 72px;
-  width: 555px;
-  background: var(--white);
-  border-radius: 20px;
-  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.08);
+  $height: 704px;
+  $width: 555px;
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: 130px 114px 1fr;
+
+  max-height: $height;
+  max-width: $width;
+  margin: auto;
+  padding: 48px 58px 72px;
+  background: var(--white);
+  border-radius: 20px;
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.08);
   & > * {
     justify-self: center;
     width: 100%;
     height: 100%;
   }
+  @media (max-width: 1024px) {
+    max-height: calc(#{$height} - 50px);
+    max-width: calc(#{$width} - 30px);
+  }
   @media (max-width: 768px) {
+    max-width: calc(#{$width} - 75px);
     grid-template-rows: 100px 114px 1fr;
-    height: 673px;
-    width: 450px;
-    margin: 10px auto;
     padding: 24px 29px 36px;
   }
-  @media (max-width: 600px) {
-    width: 80%;
-  }
   @media (max-width: 420px) {
-    width: 95%;
-    grid-template-rows: 100px 114px 1fr;
-    margin: 5px auto;
-    height: 600px;
     padding: 18px 20px 27px;
-    transform: translateY(-3px);
   }
+
   &__form {
     display: grid;
     grid-template-columns: 35% 65%;

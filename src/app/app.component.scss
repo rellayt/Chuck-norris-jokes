@@ -1,21 +1,28 @@
-.main {
-  height: calc(100% - 76px);
-  width: 100%;
+.container {
+  height: 100%;
   display: grid;
+
+  grid-template-columns: 100%;
+  grid-template-rows: 75px 1fr;
+  app-header {
+    grid-row: 1/2;
+  }
+  @media (max-width: 768px) {
+    grid-template-rows: 50px 1fr;
+  }
+}
+
+.content {
+  width: 100%;
   padding: 30px;
+  display: flex;
   justify-content: center;
   align-items: center;
-  @media (max-width: 1700px) {
-    height: auto;
-  }
+
   @media (max-width: 1440px) {
     padding: 20px;
   }
   @media (max-width: 768px) {
-    padding: 10px;
-  }
-  @media (max-width: 420px) {
-    height: 93%;
-    width: 100%;
+    padding: 15px;
   }
 }

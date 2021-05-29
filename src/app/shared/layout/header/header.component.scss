@@ -1,21 +1,14 @@
 header {
   background-color: var(--white);
   box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.05);
-  width: 100%;
-  padding: 15px 0;
-  z-index: 1;
-  @media (max-width: 768px) {
-    padding: 5px 0;
-  }
-  @media (max-width: 420px) {
-    padding: 0;
-  }
+  height: 100%;
 }
 
 .nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 100%;
   padding: 0 10%;
   &__list {
     display: flex;
