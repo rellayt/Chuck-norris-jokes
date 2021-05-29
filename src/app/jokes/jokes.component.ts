@@ -19,7 +19,7 @@ const PICTURES_PATH = 'assets/pictures'
 })
 export class JokesComponent {
 
-  impersonated: boolean = false
+  isImpersonated: boolean = false
   categories: OptionItem[] = CATEGORY_ITEMS
 
   chuckNorrisPicture: string = `${PICTURES_PATH}/chuck_norris.jpg`
@@ -91,7 +91,7 @@ export class JokesComponent {
       finalize(() => {
         this.buttonState.drawLoading = false
         this.snackBarService.open(JOKE_DRAW)
-        this.impersonated = !!firstName
+        this.isImpersonated = !!firstName
         this.jokesForm.enable()
         // or reset()
         this.jokesForm.setValue({ ...this.jokesForm.value, category: '', impersonate: '' })
