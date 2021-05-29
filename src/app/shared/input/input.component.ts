@@ -9,7 +9,7 @@ import { ControlContainer } from '@angular/forms';
 export class InputComponent {
 
   @Input() controlName: string
-  @Input() filled: boolean
+  @Input() isActive: boolean
 
   constructor(public controlContainer: ControlContainer) { }
 

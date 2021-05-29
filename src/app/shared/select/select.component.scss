@@ -6,7 +6,7 @@
     justify-content: space-between;
     align-items: center;
     transform: translateY(-2px);
-    .filled {
+    .active {
       filter: opacity(100%);
     }
     img {
@@ -17,7 +17,7 @@
 }
 ::ng-deep {
   //When value has been selected
-  .filled .mat-form-field-wrapper {
+  .active .mat-form-field-wrapper {
     .mat-form-field-flex .mat-form-field-outline {
       .mat-form-field-outline-end {
         border-radius: 0 8px 8px 0 !important;

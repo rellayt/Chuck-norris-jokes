@@ -10,6 +10,7 @@ import { map, catchError, delay, finalize, first, tap } from 'rxjs/operators';
 import { JokeConfig } from '../core/models/joke-config.model';
 import { FileService } from '../core/services/file.service';
 
+const PICTURES_PATH = 'assets/pictures'
 
 @Component({
   selector: 'app-jokes',
@@ -21,8 +22,8 @@ export class JokesComponent {
   impersonated: boolean = false
   categories: OptionItem[] = CATEGORY_ITEMS
 
-  chuckNorrisPicture: string = 'assets/pictures/chuck_norris.jpg'
-  randomPicture: string = 'assets/pictures/random_photo.jpg'
+  chuckNorrisPicture: string = `${PICTURES_PATH}/chuck_norris.jpg`
+  randomPicture: string = `${PICTURES_PATH}/random_photo.jpg`
 
   jokesForm: FormGroup;
   joke$ = this.route.data.pipe(
@@ -53,7 +54,7 @@ export class JokesComponent {
       }),
       first(),
       delay(250),
-      map(({ value }) => value.map(properties => properties.joke)),
+      map(({ value }) => value.map(({ joke }) => joke)),
       finalize(() => {
         this.jokesForm.enable()
         this.buttonState.saveLoading = false

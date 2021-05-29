@@ -9,7 +9,7 @@ import { ControlContainer } from '@angular/forms';
 export class SelectComponent {
 
   @Input() options: any[]
-  @Input() filled: boolean = false
+  @Input() isActive: boolean = false
   @Input() controlName: string
 
   constructor(public controlContainer: ControlContainer) { }
