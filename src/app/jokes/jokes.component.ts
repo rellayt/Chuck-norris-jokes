@@ -6,7 +6,7 @@ import { SnackBarService } from '../core/services/snack-bar.service';
 import { ERROR, JOKE_DRAW, JOKES_SAVE } from '../core/config/snack-bar';
 import { JokesService } from '../core/services/jokes.service';
 import { ActivatedRoute } from '@angular/router';
-import { map, catchError, delay, finalize, first, tap } from 'rxjs/operators';
+import { map, catchError, delay, finalize, tap } from 'rxjs/operators';
 import { JokeConfig } from '../core/models/joke-config.model';
 import { FileService } from '../core/services/file.service';
 

@@ -1,8 +1,6 @@
-<ng-container [formGroup]="controlContainer.control">
-  <mat-form-field class="form-field" appearance="outline" [ngClass]="{'active': isActive}">
-    <mat-label>
-      <ng-content></ng-content>
-    </mat-label>
-    <input matInput [formControlName]="controlName" maxlength="35">
-  </mat-form-field>
-</ng-container>
+<mat-form-field class="form-field" appearance="outline" [ngClass]="{'active': isActive}">
+  <mat-label>
+    <ng-content></ng-content>
+  </mat-label>
+  <input matInput [formControl]="formControl" maxlength="35">
+</mat-form-field>
