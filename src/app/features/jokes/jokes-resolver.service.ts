@@ -2,8 +2,8 @@ import { Injectable, } from '@angular/core';
 import { ActivatedRouteSnapshot, Resolve, Router, RouterStateSnapshot } from '@angular/router';
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { Joke } from '../core/models/joke.model';
-import { JokesService } from '../core/services/jokes.service';
+import { Joke } from './models/joke.model';
+import { JokesService } from '../../core/services/jokes.service';
 
 @Injectable()
 export class JokeResolver implements Resolve<Joke> {

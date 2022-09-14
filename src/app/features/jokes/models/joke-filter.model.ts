@@ -1,4 +1,4 @@
-export interface JokeConfig {
+export interface JokeFilter {
   filters: {
     firstName?: string,
     lastName?: string,

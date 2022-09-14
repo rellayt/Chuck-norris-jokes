@@ -1,6 +1,6 @@
 <div class="card">
   <img [ngClass]="{'card__impersonated-image': isImpersonated}"
-    [src]="isImpersonated ? randomPicture : chuckNorrisPicture" />
+    [src]="isImpersonated ? randomPicturePath : chuckNorrisPicturePath" />
   <p class="card__text" *ngIf="joke$ | async as joke; else textLoading" [innerHtml]="joke | unescape">
   </p>
   <ng-template #textLoading>
@@ -15,7 +15,7 @@
     <app-input controlName="impersonate" [isActive]="!!jokesForm.value.impersonate">
       Impersonate Chuck Norris
     </app-input>
-    <app-button [isLoading]="buttonState.drawLoading" [type]="'submit'">
+    <app-button [isLoading]="buttonState.isDrawLoading" [type]="'submit'">
       Draw a random {{ impersonate.length === 0 ? 'Chuck Norris' : impersonate}} joke
     </app-button>
     <app-quantity-input controlName="quantity" (onValueChange)="handleQuantityChange($event)"
@@ -23,7 +23,7 @@
     </app-quantity-input>
     <app-button
       [isDisabled]="!jokesForm.controls.quantity.valid && !jokesForm.controls.quantity.disabled || jokesForm.controls.quantity.value === 0 || jokesForm.controls.quantity.disabled"
-      (onClick)="saveJokes()" [isLoading]="buttonState.saveLoading">
+      (onClick)="saveJokes()" [isLoading]="buttonState.isSaveLoading">
       Save Jokes
     </app-button>
     <app-validation-feedback [control]="jokesForm.controls.quantity"></app-validation-feedback>

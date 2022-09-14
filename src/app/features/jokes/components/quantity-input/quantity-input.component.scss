@@ -47,17 +47,17 @@
     }
   }
   button:nth-child(2)::after {
-    background-image: url("../../../assets/pictures/rounded-minus.png");
+    background-image: url("../../../../../assets/pictures/rounded-minus.png");
   }
   button:nth-child(3)::after {
-    background-image: url("../../../assets/pictures/rounded-plus.png");
+    background-image: url("../../../../../assets/pictures/rounded-plus.png");
   }
 
   input:focus ~ button::after {
-    background-image: url("../../../assets/pictures/plus.png");
+    background-image: url("../../../../../assets/pictures/plus.png");
   }
   input:focus + button::after {
-    background-image: url("../../../assets/pictures/minus.png");
+    background-image: url("../../../../../assets/pictures/minus.png");
   }
   button:nth-child(2)::after,
   button:nth-child(3)::after {

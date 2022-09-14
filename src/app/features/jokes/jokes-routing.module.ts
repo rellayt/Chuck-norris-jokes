@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { JokeResolver } from './jokes-resolver.service';
-import { JokesComponent } from './jokes.component';
+import { JokesComponent } from './components/jokes.component';
 
 const routes: Routes = [
   {
